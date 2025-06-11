@@ -23,6 +23,7 @@
                     <a href="<?php echo base_url() ?>buku/entri" class="btn btn-primary btn-sm mb-3">
                         <i class="fa fa-plus"></i> Tambah Buku
                     </a>
+                    <?php echo $this->session->flashdata("msg"); ?> 
                     <h4 class="header-title">Data Buku</h4>
                     <div class="single-table">
                         <div class="table-responsive">
@@ -37,39 +38,31 @@
                                         <th style="color: white">Penerbit</th>
                                         <th style="color: white">Tahun</th>
                                         <th style="color: white">Stok</th>
+                                        <th style="color: white">Gambar</th>
                                         <th style="color: white">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>BK001</td>
-                                        <td>Algoritma dan Pemrograman</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>Andi Nugroho</td>
-                                        <td>Gramedia</td>
-                                        <td>2022</td>
-                                        <td>12</td>
-                                        <td>
-                                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>BK002</td>
-                                        <td>Dasar Akuntansi</td>
-                                        <td>Ekonomi</td>
-                                        <td>Sri Wahyuni</td>
-                                        <td>Erlangga</td>
-                                        <td>2021</td>
-                                        <td>8</td>
-                                        <td>
-                                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <!-- Tambahkan data dummy atau dari database -->
+                                    <?php $no = 1; foreach ($buku as $row): ?>
+                                        <tr>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $row->data_buku_nomor ?></td>
+                                            <td><?= $row->data_buku_judul ?></td>
+                                            <td><?= $row->data_buku_kategori ?></td>
+                                            <td><?= $row->data_buku_pengarang ?></td>
+                                            <td><?= $row->data_buku_penerbit ?></td>
+                                            <td><?= $row->data_buku_tahun ?></td>
+                                            <td><?= $row->data_buku_stok ?></td>
+                                            <td>
+                                                <a href="<?= site_url('uploads/'.$row->data_buku_gambar_1) ?>" target="_blank">lihat</a><br>
+                                                <a href="<?= site_url('uploads/'.$row->data_buku_gambar_2) ?>" target="_blank">lihat</a>
+                                            </td>
+                                            <td>
+                                                <a href="<?= site_url('buku/edit/'.$row->data_buku_id) ?>" class="btn btn-sm btn-primary">Edit</a>
+                                                <a href="<?= site_url('buku/delete/'.$row->data_buku_id) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

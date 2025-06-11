@@ -20,7 +20,7 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-slice"></i> <span style="color: white">Data Penting</span></a>
                                 <ul class="collapse">
-                                    <li><a href="<?php echo base_url() ?>petugas" style="color: white">Petugas</a></li>
+                                    <li><a href="<?php echo base_url() ?>petugas" style="color: white">Petugas atau Admin</a></li>
                                     <li><a href="<?php echo base_url() ?>anggota" style="color: white">Anggota</a></li>
                                 </ul>
                             </li>

@@ -28,23 +28,23 @@
 
                                 <div class="form-group">
                                     <label class="col-form-label">Nomor Buku</label>
-                                    <input type="text" class="form-control" name="data_buku_nomor" maxlength="6" required>
+                                    <input type="text" class="form-control" name="data_buku_nomor" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Judul</label>
-                                    <input type="text" class="form-control" name="data_buku_judul" maxlength="50" required>
+                                    <input type="text" class="form-control" name="data_buku_judul" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Kategori</label>
-                                    <input type="text" class="form-control" name="data_buku_kategori" maxlength="30" required>
+                                    <input type="text" class="form-control" name="data_buku_kategori" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Pengarang</label>
-                                    <input type="text" class="form-control" name="data_buku_pengarang" maxlength="50" required>
+                                    <input type="text" class="form-control" name="data_buku_pengarang" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Penerbit</label>
-                                    <input type="text" class="form-control" name="data_buku_penerbit" maxlength="50" required>
+                                    <input type="text" class="form-control" name="data_buku_penerbit" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Tahun</label>
@@ -52,15 +52,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Stok</label>
-                                    <input type="number" class="form-control" name="data_buku_stok" min="0" required>
+                                    <input type="number" class="form-control" name="data_buku_stok" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Gambar 1</label>
-                                    <input type="file" class="form-control" name="data_buku_gambar_1"  required>
+                                    <input type="file" class="form-control" name="data_buku_gambar_1" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Gambar 2</label>
-                                    <input type="file" class="form-control" name="data_buku_gambar_2"required>
+                                    <input type="file" class="form-control" name="data_buku_gambar_2" required>
                                 </div>
                                 <br>
                                 <button type="submit" class="btn btn-primary btn-sm mb-3">Simpan</button>
