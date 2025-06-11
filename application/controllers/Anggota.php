@@ -7,6 +7,7 @@ class Anggota extends CI_Controller {
         $this->load->model('M_Anggota');
     }
 
+	// TOLONG A BUATKAN FUNCTION DI SINI
 	public function index()
 	{
 		$data['anggota'] = $this->M_Anggota->get_all();
