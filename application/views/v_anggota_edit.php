@@ -22,31 +22,32 @@
                 <div class="col-12 mt-3">
                     <div class="card">
                         <?php echo $this->session->flashdata("msg"); ?> 
-                        <form action="<?php echo base_url() ?>anggota/submit" method="post">
+                        <form action="<?php echo base_url() ?>anggota/submitedit" method="post">
                             <div class="card-body">
                                 <h4 class="header-title">Entri Anggota</h4>
+                                <input type="hidden" class="form-control" name="anggota_id" value="<?= $anggota->anggota_id ?>" readonly>
                                 <div class="form-group">
                                     <label class="col-form-label">Nomor Anggota</label>
-                                    <input type="text" class="form-control" name="anggota_kode" required>
+                                    <input type="text" class="form-control" name="anggota_kode" readonly value="<?php echo isset($anggota->anggota_kode) ? $anggota->anggota_kode : ''; ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Nama Anggota</label>
-                                    <input type="text" class="form-control" name="anggota_nama" required>
+                                    <input type="text" class="form-control" name="anggota_nama" value="<?php echo isset($anggota->anggota_nama) ? $anggota->anggota_nama : ''; ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Alamat</label>
-                                    <textarea class="form-control" name="anggota_alamat" rows="3" required></textarea>
+                                    <textarea class="form-control" name="anggota_alamat" rows="3" required><?php echo isset($anggota->anggota_alamat) ? $anggota->anggota_alamat : ''; ?></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Telepon</label>
-                                    <input type="text" class="form-control" name="anggota_nohp" required>
+                                    <input type="text" class="form-control" name="anggota_nohp" value="<?php echo isset($anggota->anggota_nohp) ? $anggota->anggota_nohp : ''; ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Jenis Kelamin</label>
                                     <select class="form-control" name="anggota_jk" required>
                                         <option value="">-- Pilih --</option>
-                                        <option value="Laki-Laki">Laki-Laki</option>
-                                        <option value="Perempuan">Perempuan</option>
+                                        <option value="Laki-Laki" <?php echo (isset($anggota->anggota_jk) && $anggota->anggota_jk == 'Laki-Laki') ? 'selected' : ''; ?>>Laki-Laki</option>
+                                        <option value="Perempuan" <?php echo (isset($anggota->anggota_jk) && $anggota->anggota_jk == 'Perempuan') ? 'selected' : ''; ?>>Perempuan</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-sm mb-3">Simpan</button>

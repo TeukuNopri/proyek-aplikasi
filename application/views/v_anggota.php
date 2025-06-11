@@ -5,7 +5,7 @@
             <div class="breadcrumbs-area clearfix" style="padding-top : 7px; padding-bottom : 7px">
                 <h4 class="page-title">Data Anggota</h4>
                 <ul class="breadcrumbs pull-left">
-                    <li><a href="<?php echo base_url() ?>home">Admin</a></li>
+                    <li><a href="<?php echo base_url() ?>home">Data Penting</a></li>
                     <li><a href="<?php echo base_url() ?>anggota">Anggota</a></li>
                     <li><span>Data</span></li>
                 </ul>
@@ -23,44 +23,37 @@
                     <a href="<?php echo base_url() ?>anggota/entri" class="btn btn-primary btn-sm mb-3">
                         <i class="fa fa-plus"></i> Tambah Anggota
                     </a>
+                    <?php echo $this->session->flashdata("msg"); ?> 
                     <h4 class="header-title">Data Anggota</h4>
                     <div class="single-table">
                         <div class="table-responsive">
-                            <table class="table table-hover progress-table text-center">
-                                <thead class="bg-primary">
+                            <table class="table table-striped">
+                                <thead>
                                     <tr>
-                                        <th style="color: white">No</th>
-                                        <th style="color: white">Nomor Anggota</th>
-                                        <th style="color: white">Nama Anggota</th>
-                                        <th style="color: white">Alamat</th>
-                                        <th style="color: white">Telepon</th>
-                                        <th style="color: white">Aksi</th>
+                                        <th>No</th>
+                                        <th>Kode</th>
+                                        <th>Nama</th>
+                                        <th>Alamat</th>
+                                        <th>No HP</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php $no = 1; foreach($anggota as $a): ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>AG001</td>
-                                        <td>Dewi Lestari</td>
-                                        <td>Jl. Melati No. 21, Jakarta</td>
-                                        <td>081234567890</td>
+                                        <td><?php echo $no++; ?></td>
+                                        <td><?php echo $a->anggota_kode; ?></td>
+                                        <td><?php echo $a->anggota_nama; ?></td>
+                                        <td><?php echo $a->anggota_alamat; ?></td>
+                                        <td><?php echo $a->anggota_nohp; ?></td>
+                                        <td><?php echo $a->anggota_jk; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                                            <a href="<?php echo base_url('anggota/edit/'.$a->anggota_id); ?>" class="btn btn-sm btn-primary">Edit</a>
+                                            <a href="<?php echo base_url('anggota/delete/'.$a->anggota_id); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>AG002</td>
-                                        <td>Budi Santoso</td>
-                                        <td>Jl. Kenanga No. 12, Bandung</td>
-                                        <td>082298765432</td>
-                                        <td>
-                                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <!-- Tambahkan baris lain dari database -->
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
