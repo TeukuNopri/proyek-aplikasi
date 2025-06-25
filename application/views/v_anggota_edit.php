@@ -25,7 +25,9 @@
                         <form action="<?php echo base_url() ?>anggota/submitedit" method="post">
                             <div class="card-body">
                                 <h4 class="header-title">Entri Anggota</h4>
+                                <!-- hidden anggota id -->
                                 <input type="hidden" class="form-control" name="anggota_id" value="<?= $anggota->anggota_id ?>" readonly>
+                                <!-- end hidden anggota id -->
                                 <div class="form-group">
                                     <label class="col-form-label">Nomor Anggota</label>
                                     <input type="text" class="form-control" name="anggota_kode" readonly value="<?php echo isset($anggota->anggota_kode) ? $anggota->anggota_kode : ''; ?>" required>
